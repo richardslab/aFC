@@ -266,9 +266,9 @@ def main():
 					df_test = correct_covariates(df_test)
 
 					esize = effect_size(df_test)
-					line_out = row.tolist()+esize[0:3]
+					line_out = row.tolist()+esize[0:3]  # type: list
 					if args.output_se:
-						line_out += esize[3]
+						line_out.append(esize[3])
 					if args.count_o == 1:
 						line_out += allele_counts
 
